@@ -1,0 +1,17 @@
+.mascot-follower {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+    transition: filter 0.2s;
+    filter: brightness(1.1) drop-shadow(0 2px 8px #0002);
+    pointer-events: none;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .mascot-follower {
+        width: 70px;
+        height: 70px;
+    }
+}
