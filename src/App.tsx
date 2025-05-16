@@ -1,7 +1,7 @@
 import './App.css'
-import { TwitterTweetEmbed } from 'react-twitter-embed'
 import FloatingBackground from './FloatingBackground'
 import MascotFollower from './MascotFollower'
+import TwitterEmbed from './TwitterEmbed'
 
 function App() {
   return (
@@ -64,11 +64,14 @@ function App() {
               </a>
             </div>
             <div className="twitter-row-right">
-              <TwitterTweetEmbed tweetId="1912919771404026239" />
+              <TwitterEmbed />
             </div>
           </section>
         </main>
       </div>
+      {/* Add this to your public/index.html: 
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+      */}
     </>
   )
 }
