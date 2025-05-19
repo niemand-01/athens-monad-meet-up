@@ -251,3 +251,38 @@ header h1 {
   color: #a259e6;
   text-shadow: 0 2px 8px #e0c6fa;
 }
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #6b46c1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.restaurant-info {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.restaurant-info h2 {
+  color: #6b46c1;
+  margin-bottom: 1.5rem;
+}
+
+.restaurant-details {
+  background: #f7fafc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.restaurant-details h3 {
+  color: #4a5568;
+  margin-bottom: 1rem;
+}

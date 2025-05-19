@@ -2,8 +2,11 @@ import './App.css'
 import FloatingBackground from './FloatingBackground'
 import MascotFollower from './MascotFollower'
 import TwitterEmbed from './TwitterEmbed'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Restaurant from './Restaurant'
+import greekAlphabetImg from './assets/alphabet-Greek-sound-equivalents-English.jpg'
 
-function App() {
+function Home() {
   return (
     <>
       <FloatingBackground />
@@ -17,13 +20,39 @@ function App() {
           <section className="meetup-info">
             <h2>Gmonad, Gmouch</h2>
             <p>
-              We're thrilled to officially announce that the next Euronads meet-up will be held in Greece on the 4th, 5th and 6th of July.
+              Hi Nads, we're glad to have you all here. I am slowly adding those who submitted their applications to the form and reviewing them (cancelling some bots and making sure to not let enter unknown people).
             </p>
             <p>
-              More details will be provided in the upcoming weeks regarding the venue and some other details. If you don't have filled the form yet, DO IT RIGHT NOW or @JohnWRichKid will manifest consequences 🔪🪤
+              I'm aware y'all are waiting for 3 things:
             </p>
             <p>
-              Pack your bags and just meet the Nads!
+              1- The venue<br />
+              2- More details on the events<br />
+              3- The Luma link to apply for your Visa
+            </p>
+            <p>
+              So, which information can we communicate so far?
+            </p>
+            <p>
+              The main event will be held on July 5th, saturday, on the evening (time TBC, probably around 9pm). We're trying to pick the best venue and options possible to make this event unforgettable for everyone.
+            </p>
+            <p>
+              We are about to lock the venue in the upcoming days and the Luma invite will be shared right after, this will probably greatly facilitate your Visa submissions.
+            </p>
+            <p>
+              What do we recommend:
+            </p>
+            <p>
+              - Book your plane whenever you can<br />
+              - Don't forget a swimsuit, july is usually very hot in this region<br />
+              - Try to prioritise an hotel/airbnb in the downtown of Athens as this is going to be the epicentre of our gatherings along the week<br />
+              - Consider that some of us will arrive between the 2nd and the 3rd of July in order to enjoy the city and other activities before the main event.
+            </p>
+            <p>
+              For the moment, just chill and make your own program, we will keep you updated along the process.
+            </p>
+            <p>
+              Hope to see y'all there! 🙂
             </p>
             <div className="registration-section">
               <a
@@ -35,6 +64,21 @@ function App() {
                 Register Now
               </a>
             </div>
+          </section>
+
+          <section className="greek-alphabet-section">
+            <h2>Greek Alphabet & Sound Equivalents</h2>
+            <img
+              src={greekAlphabetImg}
+              alt="Greek Alphabet Sound Equivalents"
+              style={{
+                maxWidth: '100%',
+                borderRadius: '12px',
+                margin: '2rem auto',
+                display: 'block',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.12)'
+              }}
+            />
           </section>
 
           <section className="map-container">
@@ -62,6 +106,13 @@ function App() {
               >
                 See Latest #monad athens Posts on X
               </a>
+              <a
+                href="/restaurant"
+                className="twitter-search-button"
+                style={{ marginLeft: '10px' }}
+              >
+                Recommended Restaurants by Nads
+              </a>
             </div>
             <div className="twitter-row-right">
               <TwitterEmbed />
@@ -69,10 +120,18 @@ function App() {
           </section>
         </main>
       </div>
-      {/* Add this to your public/index.html: 
-      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-      */}
     </>
+  )
+}
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/restaurant" element={<Restaurant />} />
+      </Routes>
+    </Router>
   )
 }
 
