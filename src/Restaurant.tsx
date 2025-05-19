@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import recommendationImg from './assets/karamanlidika-recommendation.png';
 import maiandrosImg from './assets/maiandros.png';
