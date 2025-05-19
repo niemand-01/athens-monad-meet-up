@@ -126,6 +126,8 @@ function Restaurant() {
                     </div>
 
                 </section>
+                <Analytics />
+                <SpeedInsights />
             </main>
         </div>
     );
