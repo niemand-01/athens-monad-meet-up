@@ -5,6 +5,8 @@ import TwitterEmbed from './TwitterEmbed'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Restaurant from './Restaurant'
 import greekAlphabetImg from './assets/alphabet-Greek-sound-equivalents-English.jpg'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from '@vercel/analytics/next'
 
 function Home() {
   return (
@@ -127,6 +129,8 @@ function Home() {
 function App() {
   return (
     <Router>
+      <SpeedInsights />
+      <Analytics />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/restaurant" element={<Restaurant />} />
