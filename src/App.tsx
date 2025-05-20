@@ -4,6 +4,7 @@ import MascotFollower from './MascotFollower'
 import TwitterEmbed from './TwitterEmbed'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Restaurant from './Restaurant'
+import AthensFood from './AthensFood'
 import greekAlphabetImg from './assets/alphabet-Greek-sound-equivalents-English.jpg'
 // import { SpeedInsights } from '@vercel/speed-insights/next'
 // import { Analytics } from '@vercel/analytics/next'
@@ -115,6 +116,13 @@ function Home() {
               >
                 Recommended Restaurants by Nads
               </a>
+              <a
+                href="/food"
+                className="twitter-search-button"
+                style={{ marginLeft: '10px' }}
+              >
+                Traditional Greek Food Guide
+              </a>
             </div>
             <div className="twitter-row-right">
               <TwitterEmbed />
@@ -134,6 +142,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/restaurant" element={<Restaurant />} />
+        <Route path="/food" element={<AthensFood />} />
       </Routes>
     </Router>
   )
