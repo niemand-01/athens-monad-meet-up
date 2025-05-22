@@ -181,30 +181,6 @@ header h1 {
   background: #fff;
 }
 
-.twitter-search-button {
-  display: inline-block;
-  background: #1da1f2;
-  color: #fff;
-  padding: 1rem 2rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: background 0.3s, transform 0.2s;
-  margin-top: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.twitter-search-button:hover {
-  background: #0d8ddb;
-  transform: translateY(-2px);
-}
-
-.twitter-search-button:active {
-  background: #1a8cd8;
-  transform: translateY(0);
-}
-
 .twitter-row {
   display: flex;
   justify-content: space-between;
@@ -215,10 +191,12 @@ header h1 {
 }
 
 .twitter-row-left {
-  flex: 1 1 220px;
+  flex: 1 1 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .twitter-row-right {
@@ -245,6 +223,33 @@ header h1 {
     min-width: 0;
     max-width: 100%;
   }
+}
+
+.twitter-search-button {
+  flex: 1;
+  min-width: 150px;
+  display: inline-block;
+  background: #1da1f2;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.twitter-search-button:hover {
+  background: #0d8ddb;
+  transform: translateY(-2px);
+}
+
+.twitter-search-button:active {
+  background: #1a8cd8;
+  transform: translateY(0);
 }
 
 .purple-title {
@@ -285,4 +290,74 @@ header h1 {
 .restaurant-details h3 {
   color: #4a5568;
   margin-bottom: 1rem;
+}
+
+.earthquake-alert {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 20px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.earthquake-table {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.earthquake-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.earthquake-table th,
+.earthquake-table td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.earthquake-table th {
+  background-color: #f5f5f5;
+  font-weight: 600;
+}
+
+.earthquake-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.data-source {
+  font-size: 0.8rem;
+  color: #666;
+  text-align: right;
+  margin-top: 1rem;
+}
+
+.data-source a {
+  color: #666;
+  text-decoration: none;
+}
+
+.data-source a:hover {
+  text-decoration: underline;
+}
+
+.loading-message,
+.error-message {
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem 0;
+  border-radius: 6px;
+}
+
+.loading-message {
+  background-color: #f8f9fa;
+  color: #666;
+}
+
+.error-message {
+  background-color: #fff3f3;
+  color: #dc3545;
+  border: 1px solid #ffcdd2;
 }

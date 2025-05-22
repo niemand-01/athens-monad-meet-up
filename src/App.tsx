@@ -117,6 +117,15 @@ function Home() {
                 Recommended Restaurants by Nads
               </a>
               <a
+                href="http://www.geophysics.geol.uoa.gr/stations/maps/recent.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="twitter-search-button"
+                style={{ marginLeft: '10px' }}
+              >
+                Earthquake Alerts
+              </a>
+              <a
                 href="/food"
                 className="twitter-search-button"
                 style={{ marginLeft: '10px' }}
