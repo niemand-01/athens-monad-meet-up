@@ -6,8 +6,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Restaurant from './Restaurant'
 import AthensFood from './AthensFood'
 import greekAlphabetImg from './assets/alphabet-Greek-sound-equivalents-English.jpg'
+import ImageScroll from './ImageScroll'
 // import { SpeedInsights } from '@vercel/speed-insights/next'
 // import { Analytics } from '@vercel/analytics/next'
+
+// Import all images from the proj directory
+const projectImages = import.meta.glob('./assets/proj/*.{png,jpg,jpeg,svg}', { eager: true })
+const imageList = Object.values(projectImages).map((image: any) => image.default)
 
 function Home() {
   return (
@@ -16,58 +21,75 @@ function Home() {
       <MascotFollower />
       <div className="container">
         <header>
-          <h1 className="purple-title">Euronads Meet-up 2025</h1>
+          <h1 className="purple-title">The Monad Odyssey 2025</h1>
         </header>
 
         <main>
           <section className="meetup-info">
             <h2>Gmonad, Gmouch</h2>
             <p>
-              Hi Nads, we're glad to have you all here. I am slowly adding those who submitted their applications to the form and reviewing them (cancelling some bots and making sure to not let enter unknown people).
+              yeah, so no ETHCC this year… but an incoming purple storm is hitting athens! we have a banger meet-up planned which may or may not include the following:
             </p>
+            <ul className="event-activities">
+              <li>a dip in the mediterranean sea with John w Rich kid</li>
+              <li>olive oil appreciation speech with bill monday</li>
+              <li>learn how to tiktok and swear in greek from kingloui</li>
+              <li>sign up to g-van's hair transplant program</li>
+              <li>live retelling of the odysseus by sailornini and Jungy</li>
+              <li>birdwatching and live ratings by grimjow</li>
+            </ul>
             <p>
-              I'm aware y'all are waiting for 3 things:
+              no panels, no pressure - just good people, good conversations, and good vibes.
             </p>
-            <p>
-              1- The venue<br />
-              2- More details on the events<br />
-              3- The Luma link to apply for your Visa
+            <p className="location-note">
+              *location soon
             </p>
-            <p>
-              So, which information can we communicate so far?
+            <p className="important-note">
+              this event is invite-only. to keep things intimate, no plus-ones, each guest needs their own approved luma invite
             </p>
-            <p>
-              The main event will be held on July 5th, saturday, on the evening (time TBC, probably around 9pm). We're trying to pick the best venue and options possible to make this event unforgettable for everyone.
-            </p>
-            <p>
-              We are about to lock the venue in the upcoming days and the Luma invite will be shared right after, this will probably greatly facilitate your Visa submissions.
-            </p>
-            <p>
-              What do we recommend:
-            </p>
-            <p>
-              - Book your plane whenever you can<br />
-              - Don't forget a swimsuit, july is usually very hot in this region<br />
-              - Try to prioritise an hotel/airbnb in the downtown of Athens as this is going to be the epicentre of our gatherings along the week<br />
-              - Consider that some of us will arrive between the 2nd and the 3rd of July in order to enjoy the city and other activities before the main event.
-            </p>
-            <p>
-              For the moment, just chill and make your own program, we will keep you updated along the process.
-            </p>
-            <p>
-              Hope to see y'all there! 🙂
-            </p>
+
+            <div className="about-monad">
+              <h3>about monad</h3>
+              <p>
+                Monad is a Layer 1 blockchain bringing parallel execution to the EVM, unlocking real-time throughput of 10,000 transactions per second.
+              </p>
+            </div>
+
+            <div className="photo-release">
+              <h3>photo release</h3>
+              <p>
+                by attending an event organized by Monad Foundation, you are entering an area where photography, audio and video live-streaming and/or recording may occur.
+              </p>
+              <p>
+                your entry and presence at such an event constitutes your consent to be photographed, filmed (including live-streamed), and/or otherwise recorded and to the release, publication, exhibition, or reproduction of any and all recorded media of your appearance, voice, and name for any purpose whatsoever in connection with Monad Foundation and its initiatives.
+              </p>
+              <p>
+                by attending the event, you waive and release any claims you may have related to the use of such media of you at the event.
+              </p>
+            </div>
+
             <div className="registration-section">
+              <a
+                href="https://lu.ma/efrqzoni?tk=LzANZl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="register-button"
+              >
+                Register on Luma
+              </a>
               <a
                 href="https://forms.gle/hKK4U1Y8JoSjQZGH8"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="register-button"
+                style={{ marginLeft: '10px' }}
               >
-                Register Now
+                Submit Application Form
               </a>
             </div>
           </section>
+
+          <ImageScroll images={imageList} />
 
           <section className="greek-alphabet-section">
             <h2>Greek Alphabet & Sound Equivalents</h2>

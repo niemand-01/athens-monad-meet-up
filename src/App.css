@@ -78,7 +78,7 @@ header h1 {
 
 .meetup-info p {
   line-height: 1.6;
-  color: #444;
+  color: #a259e6;
   margin-bottom: 1rem;
 }
 
@@ -360,4 +360,148 @@ header h1 {
   background-color: #fff3f3;
   color: #dc3545;
   border: 1px solid #ffcdd2;
+}
+
+.event-activities {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.event-activities li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: #a259e6;
+}
+
+.event-activities li:before {
+  content: "•";
+  color: #a259e6;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.location-note {
+  font-style: italic;
+  color: #a259e6;
+  margin: 1rem 0;
+}
+
+.important-note {
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1.5rem 0;
+  color: #a259e6;
+}
+
+.about-monad,
+.photo-release {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.about-monad h3,
+.photo-release h3 {
+  color: #a259e6;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.photo-release p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #a259e6;
+}
+
+.image-scroll-container {
+  margin: 4rem -2rem;
+  padding: 2rem 0;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+}
+
+.scroll-title {
+  text-align: center;
+  color: #a259e6;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+}
+
+.image-scroll {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+  width: fit-content;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(calc(-20% - 0.8rem), 0, 0);
+    /* Adjusted for 5 sets of images */
+  }
+}
+
+.image-scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 2%, black 98%, transparent);
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.scroll-image-item {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.scroll-image-item.fade-out {
+  opacity: 0;
+}
+
+.scroll-image-item:hover {
+  transform: scale(1.05);
+}
+
+.scroll-image-item img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 1rem;
 }
