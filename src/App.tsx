@@ -5,8 +5,11 @@ import TwitterEmbed from './TwitterEmbed'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Restaurant from './Restaurant'
 import AthensFood from './AthensFood'
+import TripAdvice from './TripAdvice'
 import greekAlphabetImg from './assets/alphabet-Greek-sound-equivalents-English.jpg'
+import pageThumbnail from './assets/GsrwXaaXYAAehHC.png'
 import ImageScroll from './ImageScroll'
+import { Helmet } from 'react-helmet'
 // import { SpeedInsights } from '@vercel/speed-insights/next'
 // import { Analytics } from '@vercel/analytics/next'
 
@@ -17,27 +20,53 @@ const imageList = Object.values(projectImages).map((image: any) => image.default
 function Home() {
   return (
     <>
+      <Helmet>
+        <title>Godyessy</title>
+        <meta property="og:title" content="Godyessy" />
+        <meta property="og:image" content={pageThumbnail} />
+        <meta property="og:type" content="website" />
+        <link rel="icon" type="image/png" href={pageThumbnail} />
+      </Helmet>
       <FloatingBackground />
       <MascotFollower />
       <div className="container">
         <header>
           <h1 className="purple-title">The Monad Odyssey 2025</h1>
         </header>
+        <section className="latest-thread">
+          <h2>Latest thread for official events</h2>
+        </section>
 
         <main>
+          <section className="museum-tour-invite meetup-info">
+            <p>
+              We invite you to join us for a museum tour in Athens on <strong>Friday, July 4th</strong>, and dive into the heart of Greek culture.<br /><br />
+              Lucky for us, our guide <strong>@ChaosWalk3r</strong> will be leading the way and sharing insights into the rich history of his country.<br /><br />
+              <em>Note: you'll need to book your own ticket. Once you've done so, please request access on Luma.</em>
+            </p>
+            <div className="registration-section">
+              <a
+                href="https://lu.ma/2j19ztm4"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="register-button"
+              >
+                Request Access for Museum Tour on Luma
+              </a>
+            </div>
+          </section>
           <section className="meetup-info">
-            <h2>Gmonad, Gmouch</h2>
             <p>
               yeah, so no ETHCC this year… but an incoming purple storm is hitting athens! we have a banger meet-up planned which may or may not include the following:
             </p>
-            <ul className="event-activities">
-              <li>a dip in the mediterranean sea with John w Rich kid</li>
-              <li>olive oil appreciation speech with bill monday</li>
-              <li>learn how to tiktok and swear in greek from kingloui</li>
-              <li>sign up to g-van's hair transplant program</li>
-              <li>live retelling of the odysseus by sailornini and Jungy</li>
-              <li>birdwatching and live ratings by grimjow</li>
-            </ul>
+            <div className="event-activities">
+              <p><strong>a dip in the mediterranean sea with John w Rich kid</strong></p>
+              <p><strong>olive oil appreciation speech with bill monday</strong></p>
+              <p><strong>learn how to tiktok and swear in greek from kingloui</strong></p>
+              <p><strong>sign up to g-van's hair transplant program</strong></p>
+              <p><strong>live retelling of the odysseus by sailornini and Jungy</strong></p>
+              <p><strong>birdwatching and live ratings by grimjow</strong></p>
+            </div>
             <p>
               no panels, no pressure - just good people, good conversations, and good vibes.
             </p>
@@ -154,6 +183,13 @@ function Home() {
               >
                 Traditional Greek Food Guide
               </a>
+              <a
+                href="/trip-advice"
+                className="twitter-search-button"
+                style={{ marginLeft: '10px' }}
+              >
+                Trip Advice & Attractions
+              </a>
             </div>
             <div className="twitter-row-right">
               <TwitterEmbed />
@@ -167,15 +203,25 @@ function Home() {
 
 function App() {
   return (
-    <Router>
-      {/* <SpeedInsights />
-      <Analytics /> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/restaurant" element={<Restaurant />} />
-        <Route path="/food" element={<AthensFood />} />
-      </Routes>
-    </Router>
+    <>
+      <Helmet>
+        <title>Godyessy</title>
+        <meta property="og:title" content="Godyessy" />
+        <meta property="og:image" content="/GsrwXaaXYAAehHC.png" />
+        <meta property="og:type" content="website" />
+        <link rel="icon" type="image/png" href="/GsrwXaaXYAAehHC.png" />
+      </Helmet>
+      <Router>
+        {/* <SpeedInsights />
+        <Analytics /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/restaurant" element={<Restaurant />} />
+          <Route path="/food" element={<AthensFood />} />
+          <Route path="/trip-advice" element={<TripAdvice />} />
+        </Routes>
+      </Router>
+    </>
   )
 }
 

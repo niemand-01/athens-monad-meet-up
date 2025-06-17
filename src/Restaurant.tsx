@@ -1,4 +1,6 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import recommendationImg from './assets/karamanlidika-recommendation.png';
 import maiandrosImg from './assets/maiandros.png';
 // import { SpeedInsights } from "@vercel/speed-insights/react";
@@ -7,6 +9,9 @@ import maiandrosImg from './assets/maiandros.png';
 function Restaurant() {
     return (
         <div className="container">
+            <Helmet>
+                <title>Restaurants - Godyessy</title>
+            </Helmet>
             <header>
                 <h1 className="purple-title">Best restaurants in Town</h1>
                 <Link to="/" className="back-link">← Back to Home</Link>

@@ -257,16 +257,25 @@ header h1 {
   text-shadow: 0 2px 8px #e0c6fa;
 }
 
+.back-link-container {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
 .back-link {
   display: inline-block;
-  margin-top: 1rem;
-  color: #6b46c1;
+  color: #9b4dca;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: rgba(155, 77, 202, 0.1);
 }
 
 .back-link:hover {
-  text-decoration: underline;
+  background: rgba(155, 77, 202, 0.2);
+  transform: translateX(-4px);
 }
 
 .restaurant-info {
@@ -363,24 +372,17 @@ header h1 {
 }
 
 .event-activities {
-  list-style-type: none;
-  padding: 0;
   margin: 1.5rem 0;
 }
 
-.event-activities li {
-  padding: 0.5rem 0;
-  position: relative;
-  padding-left: 1.5rem;
+.event-activities p {
+  margin: 0.8rem 0;
   color: #a259e6;
+  line-height: 1.6;
 }
 
-.event-activities li:before {
-  content: "•";
-  color: #a259e6;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
+.event-activities strong {
+  font-weight: 600;
 }
 
 .location-note {
@@ -504,4 +506,202 @@ header h1 {
   max-height: 100%;
   object-fit: contain;
   padding: 1rem;
+}
+
+/* Trip Advice Styles */
+.museums-section,
+.entertainment-section {
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.museums-grid,
+.entertainment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.museum-card,
+.entertainment-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.museum-card h3,
+.entertainment-card h3 {
+  color: #9b4dca;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.museum-card ul,
+.entertainment-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.museum-card li,
+.entertainment-card li {
+  margin-bottom: 1.5rem;
+}
+
+.museum-card strong,
+.entertainment-card strong {
+  display: block;
+  color: #9b4dca;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.museum-card p,
+.entertainment-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.museum-note {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+}
+
+.cinema-info {
+  padding: 1rem;
+  background: rgba(155, 77, 202, 0.1);
+  border-radius: 8px;
+}
+
+.cinema-info h4 {
+  color: #9b4dca;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+
+  .museums-grid,
+  .entertainment-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Ticket Section Styles */
+.tickets-section {
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 1.5rem 0;
+}
+
+.ticket-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card h3 {
+  color: #9b4dca;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.ticket-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ticket-item,
+.museum-item,
+.entertainment-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(155, 77, 202, 0.2);
+}
+
+.ticket-item:last-child,
+.museum-item:last-child,
+.entertainment-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.ticket-item strong,
+.museum-item strong,
+.entertainment-item strong {
+  display: block;
+  color: #9b4dca;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.ticket-item p,
+.museum-item p,
+.entertainment-item p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.ticket-button {
+  display: inline-block;
+  background-color: #9b4dca;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-button:hover {
+  background-color: #8a3db8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-note {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+  color: #666;
+  padding: 1rem;
+  background: rgba(155, 77, 202, 0.05);
+  border-radius: 8px;
+}
+
+.official-link {
+  color: #9b4dca;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.official-link:hover {
+  color: #8a3db8;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .tickets-grid {
+    grid-template-columns: 1fr;
+  }
 }

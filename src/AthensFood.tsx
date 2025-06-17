@@ -1,4 +1,6 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
 import bougatsaImg from './assets/food/bougatsa.jpg';
 import spanakopitaImg from './assets/food/spanakopita.jpg';
 import tiropitaImg from './assets/food/tiropita.jpg';
@@ -13,6 +15,9 @@ import alexFoodRecommendImg from './assets/food/alex_food_recommend.png';
 function AthensFood() {
     return (
         <div className="container">
+            <Helmet>
+                <title>Greek Food Guide - Godyessy</title>
+            </Helmet>
             <header>
                 <h1 className="purple-title">Traditional Greek Food Guide</h1>
                 <Link to="/" className="back-link">← Back to Home</Link>
